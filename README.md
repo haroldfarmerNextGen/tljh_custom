@@ -1,2 +1,2 @@
 # tljh_custom
-This is a change
+This repository contains the Jupyterhub files that have been changed.
