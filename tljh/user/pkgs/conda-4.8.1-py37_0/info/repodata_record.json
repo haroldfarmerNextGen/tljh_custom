@@ -1,0 +1,35 @@
+{
+  "arch": "x86_64",
+  "build": "py37_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [
+    "conda-build >=3",
+    "conda-env >=2.6",
+    "cytoolz >=0.8.1"
+  ],
+  "depends": [
+    "conda-package-handling >=1.3.0",
+    "pycosat >=0.6.3",
+    "pyopenssl >=16.2.0",
+    "python >=3.7,<3.8.0a0",
+    "requests >=2.18.4,<3",
+    "ruamel_yaml >=0.11.14,<0.16",
+    "setuptools >=31.0.1"
+  ],
+  "features": "",
+  "fn": "conda-4.8.1-py37_0.conda",
+  "legacy_bz2_md5": "fe8d6ff3660d8341dc002579c08f8984",
+  "legacy_bz2_size": 3188691,
+  "license": "BSD 3-Clause",
+  "md5": "0184b64161dcd0ef3513a91e23d76bbb",
+  "name": "conda",
+  "platform": "linux",
+  "sha256": "07680dff81122ddd059f3c053923f1a771089ad629609d25a29f8f70a5409ec5",
+  "size": 2970239,
+  "subdir": "linux-64",
+  "timestamp": 1576798200015,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/conda-4.8.1-py37_0.conda",
+  "version": "4.8.1"
+}
