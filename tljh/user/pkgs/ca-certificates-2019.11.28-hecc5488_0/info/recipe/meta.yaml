@@ -1,0 +1,38 @@
+# This file created by conda-build 3.18.11
+# meta.yaml template originally from:
+# /home/conda/recipe_root, last modified Thu Nov 28 16:11:34 2019
+# ------------------------------------------------
+
+package:
+    name: ca-certificates
+    version: 2019.11.28
+source:
+    sha256: 25b64c7da4cd7479594d035c08c2d809eb4aab3a26e5a990ea98cc450c320f1f
+    url: https://pypi.io/packages/source/c/certifi/certifi-2019.11.28.tar.gz
+build:
+    number: '0'
+    string: hecc5488_0
+test:
+    commands:
+        - test -f "${PREFIX}/ssl/cacert.pem"
+        - test -f "${PREFIX}/ssl/cert.pem"
+        - curl --cacert "${PREFIX}/ssl/cacert.pem" https://www.google.com
+    requires:
+        - curl
+about:
+    home: https://github.com/conda-forge/ca-certificates-feedstock
+    license: ISC
+    license_file: LICENSE
+    summary: Certificates for use with other packages.
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - jakirkham
+        - jjhelmus
+        - msarahan
+        - mwcraig
+        - ocefpaf
+        - patricksnape
+        - pelson
+        - scopatz

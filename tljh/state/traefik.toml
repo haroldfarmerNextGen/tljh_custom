@@ -1,0 +1,47 @@
+# traefik.toml file template
+
+defaultEntryPoints = ["http"]
+
+
+logLevel = "INFO"
+# log errors, which could be proxy errors
+[accessLog]
+format = "json"
+[accessLog.filters]
+statusCodes = ["500-999"]
+
+[accessLog.fields.headers]
+[accessLog.fields.headers.names]
+Authorization = "redact"
+Cookie = "redact"
+Set-Cookie = "redact"
+X-Xsrftoken = "redact"
+
+[respondingTimeouts]
+idleTimeout = "10m0s"
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+  
+
+  
+  [entryPoints.auth_api]
+  address = "127.0.0.1:8099"
+  [entryPoints.auth_api.whiteList]
+  sourceRange = ['127.0.0.1']
+  [entryPoints.auth_api.auth.basic]
+  users = ['api_admin:$apr1$TA1kxR/8$9oA0uypx1LfKB0psgYykQ1']
+
+[wss]
+protocol = "http"
+
+[api]
+dashboard = true
+entrypoint = "auth_api"
+
+
+
+[file]
+filename = "rules.toml"
+watch = true
